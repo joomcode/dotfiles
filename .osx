@@ -35,12 +35,20 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Disable the over-the-top focus ring animation
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
-# Disable smooth scrolling
-# (Uncomment if you’re on an older Mac that messes up the animation)
-#defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
+# Disable window opening/closing animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
-# Increase window resize speed for Cocoa applications
+# Disable window resizing animations (Cocoa applications)
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# Disable Quick Look animations
+defaults write -g QLPanelAnimationDuration -float 0
+
+# Disable sheet animations (dialog drops)
+defaults write NSGlobalDomain NSWindowSheetAnimationDuration -float 0
+
+# Disable smooth scrolling
+defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
